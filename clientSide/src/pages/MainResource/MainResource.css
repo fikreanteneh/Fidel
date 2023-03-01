@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+.resource-container {
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 30px;
+    margin-bottom: 10px;
+    align-items: center;
+    margin-left: 100px;
+    height: 100px;
+    box-shadow: 0 0 10px 2px rgb(239, 239, 239);
+    padding: 0px 20px ;
+
+}
+
+.resources{
+    font-size: 100px;
+    margin: 0 50px;
+}
+
+.resource-grade, .resource-title{
+    font-size: 25px;
+    font-weight: 600;
+    color: #0fa37f;
+    margin-right: 50px;
+}
+
+.watch-now-btn {
+    width: 200px;
+    color: white;
+    background-color: #0fa37f;
+    border: none;
+    padding: 12px;
+    font-size: 20px;
+    font-weight: 500px;
+    border-radius: 7px;
+    transition: 0.35s;
+    cursor: pointer;
+    margin-left: 200px;
+}
+
+.watch-now-btn:hover {
+    background-color: transparent;
+    color: #0fa37f;
+    border: 2px solid #0fa37f;
+}

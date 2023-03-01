@@ -1,0 +1,92 @@
+.admin-classView-wrapper {
+}
+
+.class-screen {
+  width: 50%;
+  margin: 2rem auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.class-one {
+  width: 160px;
+  border-radius: 2px;
+  height: 65px;
+
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  border: 1px solid #0fa37f;
+  background-color: transparent;
+  color: #0fa37f;
+}
+
+.class-one p {
+  font-size: 18px;
+}
+
+.class-one i {
+  font-size: 1.5rem;
+}
+
+.createClassBtn {
+  height: 3.2rem;
+  width: 160px;
+  border: 1px solid #0fa37f;
+  background-color: transparent;
+  color: #0fa37f;
+
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.createClassBtn:hover {
+  background-color: #0fa37f;
+  border: none;
+  color: white;
+}
+.class-header {
+  margin: -15px auto 2rem auto;
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.no-class {
+  font-size: 1.25rem;
+  color: rgba(0, 0, 0, 0.18);
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.assign-actual-size {
+  width: 60%;
+  margin: 2.5rem auto;
+}
+.subject-teacher-flex {
+  width: 90%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgb(214, 214, 214);
+  margin: 0.75rem auto;
+  padding: 8px;
+}
+
+.subject-teacher-flex>div input{
+  margin-right: 2.5rem;
+}
+
+.subject-name {
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+

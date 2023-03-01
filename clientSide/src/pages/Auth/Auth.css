@@ -1,0 +1,130 @@
+.Authentication-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcome {
+  text-align: center;
+  align-self: flex-start;
+}
+.welcome i {
+  font-size: 2.65rem;
+  margin-bottom: 1rem;
+}
+
+.register-wrapper {
+  /* border: 2px solid red; */
+}
+.register-wrapper button {
+  display: block;
+  margin-top: 0.85rem;
+  height: 3.25rem;
+  width: 375px;
+  border: none;
+  color: white;
+  font-size: 1.15rem;
+  font-weight: 500;
+  background-color: var(--text-color-green);
+  cursor: pointer;
+}
+.register-wrapper select {
+  display: block;
+  margin-top: 1rem;
+  height: 2.75rem;
+  color: white;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  border: 1px solid var(--text-color-green);
+  padding-left: 1rem;
+}
+.register-wrapper input {
+  position: relative;
+  display: flex;
+  height: 2.75rem;
+  width: 360px;
+  margin: 1rem auto;
+  border: 1px solid var(--text-color-green);
+  color: black !important;
+  font-size: 1.1rem;
+  padding-left: 0.5rem;
+
+  border-radius: 2px;
+}
+
+.register-wrapper input::placeholder {
+  padding-left: 0.5rem;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.register-wrapper input:focus::placeholder,
+.register-wrapper input:hover::placeholder {
+  transform: translateY(-200%);
+  transition: transform 0.3s ease;
+  opacity: 1;
+  z-index: 1000;
+}
+
+/* special birth day form */
+.birthday-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.birthday-wrapper input:nth-child(1) {
+  width: 60px;
+}
+.birthday-wrapper input:nth-child(2) {
+  width: 75px;
+}
+.birthday-wrapper input:nth-child(3) {
+  width: 170px;
+}
+.roleGender {
+  display: flex;
+  justify-content: space-between;
+}
+.roleGender > select {
+  margin-top: -0.1rem;
+  width: 180px;
+  margin-bottom: 2rem;
+}
+.teachers-options select {
+  width: 375px !important;
+}
+.teachers-options select[name="subject"] > option {
+  font-size: 0.85rem;
+  margin: -0.5rem;
+}
+.switcher {
+  margin: 3rem auto;
+  position: relative;
+  text-align: center;
+}
+.switcher .bar {
+  height: 1.5px;
+  z-index: -10;
+  background-color: rgb(135, 135, 135);
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  opacity: 0.4;
+}
+.switcher p{
+    margin: auto;
+    width: fit-content;
+    padding: 8px;
+    background-color: white;
+    z-index: 1;
+    cursor: pointer;
+}

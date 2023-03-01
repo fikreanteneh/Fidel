@@ -1,0 +1,66 @@
+.NavBar-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  color: var(--text-color-green);
+  text-decoration: none;
+  padding: 0 50px;
+}
+
+.homelogo {
+  border-radius: 10px;
+  width: 60px;
+  font-size: 1.85rem;
+}
+
+.nav-links {
+  color: var(--text-color-green) !important;
+  text-decoration: none !important;
+  margin: auto 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.profile {
+  position: relative;
+}
+
+.profile i {
+  font-size: 1.85rem;
+  cursor: pointer;
+}
+
+.sidebar-option {
+ width: 100px;
+  position: absolute;
+  padding: 10px 5px;
+  z-index: 100;
+  left:-38px;
+  border: 1px solid var(--text-color-green);
+  background-color: white;
+
+  display:none ;
+}
+
+.logoutOption {
+  margin: 0.5rem auto;
+}
+.logoutOption span {
+  font-size: 0.75rem;
+  padding-left: 10px;
+  text-transform: lowercase !important;
+}
+.logoutOption i {
+  font-size: 0.9rem;
+}
+
+.profileLink{
+  color: var(--text-color-green);
+}
+
+.profile:hover .sidebar-option{
+  display: block;
+}
+.sidebar-option:hover .sidebar-option{
+  display: block;
+}

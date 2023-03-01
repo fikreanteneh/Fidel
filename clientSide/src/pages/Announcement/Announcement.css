@@ -1,0 +1,75 @@
+.announcement {
+    width: 80%;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.announcement-header {
+    text-align: center;
+}
+
+.announcement-form {
+    margin: 50px auto;
+    margin-top: 10px;
+    padding: 20px 20px;
+}
+
+.announce-title, .announce-description {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.title__label, .description__label {
+    width: 200px;
+    text-align: end;
+    padding-right: 50px;
+    font-size: 22px;
+  
+}
+
+.title__label {
+    padding-top: 18px;
+}
+
+
+.title__textArea{
+    width: 820px;
+    border: none;
+    border-bottom: 1px solid black;
+    height: 40px;
+    font-size: 24px;
+    padding: 2px 20px;
+
+}
+.description__textArea{
+    width: 800px;
+    height: 200px;
+    font-size: 18px;
+    padding: 20px 30px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: end;
+    padding-right: 350px;
+}
+
+.announce-btn {
+    width: 200px;
+    color: white;
+    background-color: #0fa37f;
+    border: none;
+    padding: 15px;
+    font-size: 24px;
+    font-weight: 500px;
+    border-radius: 7px;
+    transition: 0.35s;
+    cursor: pointer;
+
+}
+
+.announce-btn:hover {
+    background-color: transparent;
+    color: #0fa37f;
+    border: 2px solid #0fa37f;
+}

@@ -1,0 +1,19 @@
+.NoA-wrapper {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.NoA-wrapper .close-icon {
+  width: fit-content;
+  font-size: 9rem;
+  color: var(--text-color-green);
+  margin: 0 auto;
+  cursor: pointer;
+}
+.NoA-wrapper p {
+  color: var(--text-color-green);
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.125rem;
+}

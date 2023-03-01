@@ -1,0 +1,14 @@
+.loading-wrapper {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.load-screen img {
+  width: 210px;
+}
+.loading-wrapper p {
+  margin-top: 3rem;
+  font-weight: 600;
+  color: var(--text-color-green);
+  text-align: center;
+}
