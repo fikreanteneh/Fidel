@@ -1,0 +1,138 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+// !!!!!!!!!!!!!!!!!!!!!!
+
+
+model Account {
+  id  Int   @unique @default(autoincrement())
+  user_id String @id @unique 
+  password String
+  details Account_detail[]
+  addresses Address?
+  teacher_detail TeacherDetail[]
+  subject Subject[]
+  enrollment Enrollment[]
+  result Result[]
+admin Admin[]
+guardianInfo GuardianInfo[]
+}
+
+
+model Account_detail {
+  accDetailId      Int    @id @default(autoincrement())
+  role    String
+  user_id String @unique
+  first_name  String
+  last_name   String
+  sure_name    String
+  gender      String
+  BirthDate   String
+  profile_picture String?
+
+  account     Account @relation(fields: [user_id], references: [user_id])
+}
+
+model Address {
+  // phone and email needed
+
+  addressId  Int @id 
+  user_id String @unique
+  city    String
+  subcity String
+  phone Int
+  email String
+  account Account @relation(fields: [user_id], references: [user_id])
+}
+
+
+
+model GuardianInfo {
+ guardianInfoId Int @id
+  user_id String @unique
+  full_name String
+  email     String
+  phone     String
+  relation  String
+  account   Account @relation(fields: [user_id], references: [user_id])
+}
+
+model TeacherDetail {
+  user_id String @unique
+  department String
+  subject    String
+  level      String
+  account    Account @relation(fields: [user_id], references: [user_id])
+
+
+}
+
+model Classes {
+  class_id          String  @id @unique
+  grade_level       Int
+  section           String
+  academic_year     String
+  subject Subject[]
+  Enrollment Enrollment[]
+
+}
+
+// join teachers table and account detail based on user_id return fnam middle surenam with level subject departement
+
+model Subject {
+  subject_id    String  @id
+  subject       String
+  teacher_name  String
+  Teacher_id    String
+  class_id      String
+  teacher       Account @relation(fields: [Teacher_id], references: [user_id])
+  classes         Classes   @relation(fields: [class_id], references: [class_id])
+  result Result[]
+}
+
+model Enrollment {
+  id Int @id @default(autoincrement())
+ user_id String
+  year String
+  class_id  String
+  account   Account @relation(fields: [user_id], references: [user_id])
+  classes     Classes   @relation(fields: [class_id], references: [class_id])
+}
+
+model Result {
+  // id           Int   @default(autoincrement())
+  subject_id   String  @id 
+  user_id String
+  result       Json
+  subject      Subject @relation(fields: [subject_id], references: [subject_id])
+  account      Account @relation(fields: [user_id], references: [user_id])
+}
+
+
+
+
+model Admin {
+  id             Int     @id @default(autoincrement())
+  user_id String
+  role           String
+  job_title      String
+  job_description String
+  account        Account @relation(fields: [user_id], references: [user_id])
+}
+
+
+model Anouncement {
+  id Int @id @default(autoincrement())
+  title String
+  description String
+}
