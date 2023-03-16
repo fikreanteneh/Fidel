@@ -7,10 +7,12 @@ const prisma = new PrismaClient();
 
 require("dotenv").config();
 
+// Fetching api key from env to connect to Stream Chat
 const api_key = process.env.STREAM_API_KEY;
 const api_secret = process.env.STREAM_API_SECRET;
 const app_id = process.env.STREAM_APP_ID;
 
+// Admin sign up process
 const signup = async (req, res) => {
   try {
     const {
@@ -103,20 +105,25 @@ const signup = async (req, res) => {
 };
 
 const login = async (req, res) => {
+  console.log(req.body)
   const { username, password } = req.body;
 
   try {
+    console.log("beforeeeeeeeee")
     const serverClient = connect(api_key, api_secret, app_id);
     const client = StreamChat.getInstance(api_key, api_secret);
+    console.log("beforeeeeeeeeeeeeeeeeee")
+    console.log(username)
 
     const { users } = await client.queryUsers({ name: username });
-
+    console.log(users)
     if (!users.length)
       return res.status(400).json({ message: "User not found" });
     const success = await bcrypt.compare(
       `${password}`,
       users[0]["hashedPassword"]
     );
+  
 
     const token = serverClient.createUserToken(users[0].id);
 

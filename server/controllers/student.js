@@ -6,10 +6,19 @@ const { mysqlConnection } = require("./admin");
 const getStudents = async (req, res) => {
   const { classID } = req.query;
   try {
-    const id = String(classID.slice(0, 8));
-    const query = ` SELECT * FROM enrollment INNER JOIN account_detail ON enrollment.user_id = account_detail.user_id where enrollment.class_id='${id}';`;
+    let i = 0
+    let count = 3
+    while (count > 0) {
+      if (classID[i] == "-"){
+        count --
+
+      }
+      i++
+    }
+    const id = String(classID.slice(0, i-1));
+    const query = ` SELECT * FROM enrollment INNER JOIN account_detail ON enrollment.user_id = account_detail.user_id where enrollment.class_id='${"---",id}';`;
     mysqlConnection.query(query, (err, result) => {
-      console.log(result);
+      console.log("---",result);
       res.status(200).json(result);
     });
   } catch (error) {
